@@ -1,0 +1,57 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get("cdn/stories/home", {
+    version: "draft",
+});
+
+const story = data.story;
+---
+
+<Layout title="This is a test with storyblok.">
+    <main>
+        <h1 class="h1">This is from storyblock</h1>
+
+        <StoryblokComponent blok={story.content} />
+
+        <br />
+
+        <h1>This is static</h1>
+
+        <p class="p-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam
+            ratione omnis repudiandae accusantium molestiae blanditiis cumque
+            deserunt commodi reprehenderit nemo molestias maiores, totam nostrum
+            ipsa distinctio quis eos, consequuntur veniam alias tenetur. Eaque
+            reiciendis ratione voluptate non autem ab saepe culpa, assumenda
+            nemo accusantium ipsam magni nesciunt deleniti minus praesentium sit
+            itaque aut sapiente ex quia quasi dolores? Quisquam a unde at alias,
+            minima natus corporis tempora consequuntur necessitatibus illo
+            tenetur maiores, perferendis ab eum consequatur sed quas animi.
+            Rerum perspiciatis, veniam aspernatur exercitationem labore,
+            accusamus sapiente atque ullam vitae, a itaque dolores facere in eos
+            architecto iste dolor est?
+        </p>
+
+        <a href="/" class="btn btn-primary" role="button">Volver</a>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 1rem;
+        padding: 0;
+    }
+</style>
