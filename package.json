@@ -13,9 +13,11 @@
     "devDependencies": {
         "@astrojs/tailwind": "^2.0.2",
         "@astrojs/vue": "^1.1.0",
+        "@fontsource/quicksand": "^4.5.11",
         "@storyblok/astro": "^1.1.0",
         "@tailwindcss/typography": "^0.5.7",
         "astro": "^1.4.2",
+        "astro-icon": "^0.7.3",
         "daisyui": "^2.31.0",
         "dotenv": "^16.0.3",
         "theme-change": "^2.2.0",

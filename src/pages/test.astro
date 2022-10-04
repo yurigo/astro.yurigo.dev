@@ -1,7 +1,7 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-import Layout from "../layouts/Layout.astro";
+import FullLayout from "../layouts/FullLayout.astro";
 import Card from "../components/Card.astro";
 
 const storyblokApi = useStoryblokApi();
@@ -12,7 +12,7 @@ const { data } = await storyblokApi.get("cdn/stories/home", {
 const story = data.story;
 ---
 
-<Layout title="This is a test with storyblok.">
+<FullLayout>
     <main>
         <h1 class="h1">This is from storyblock</h1>
 
@@ -39,7 +39,7 @@ const story = data.story;
 
         <a href="/" class="btn btn-primary" role="button">Volver</a>
     </main>
-</Layout>
+</FullLayout>
 
 <style>
     main {

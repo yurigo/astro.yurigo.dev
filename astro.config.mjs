@@ -12,9 +12,16 @@ console.log(process.env.STORYBLOK_TOKEN)
 
 // https://astro.build/config
 export default defineConfig({
+
+  output: "static",
+
   integrations: [
     vue(),
-    tailwind(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
     storyblok({
       accessToken: process.env.STORYBLOK_TOKEN,
       components: {

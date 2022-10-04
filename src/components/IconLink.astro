@@ -1,0 +1,48 @@
+---
+const { to, icon, title, text } = Astro.props;
+---
+
+<a href={to} title={title}>
+    <div class="icon">{icon}</div>
+    <div class="text">{text}</div>
+</a>
+
+<style>
+    a:hover {
+        transform: scale(1.1);
+    }
+
+    a:active {
+        transform: scale(0.95);
+    }
+
+    .text {
+        line-height: normal;
+        font-size: 10px;
+        color: black;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .icon {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3px;
+        font-size: 2.5em;
+
+        filter: drop-shadow(7px 7px 0px rgba(0, 0, 0, 0.2));
+
+        font-family: "Segoe UI Emoji", sans-serif;
+    }
+</style>
+
+<style is:global>
+    .text {
+    }
+
+    .dark .text {
+        color: #999;
+    }
+</style>

@@ -1,89 +1,115 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import EmptyLayout from "../layouts/EmptyLayout.astro";
+import IconLink from "~/components/IconLink.astro";
+import ToggleTheme from "~/components/core/ToggleTheme.astro";
+import ThemeChange from "~/components/ThemeChange.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-    <main>
-        <h1>Welcome to <span class="text-sky-400">Astro</span></h1>
-        <p class="instructions">
-            To get started, open the directory <code>src/pages</code> in your project.<br
-            />
-            <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
-            above.
-        </p>
-        <ul role="list" class="link-card-grid">
-            <!-- <Card
-                href="https://docs.astro.build/"
-                title="Documentation"
-                body="Learn how Astro works and explore the official API docs."
-            />
-            <Card
-                href="https://astro.build/integrations/"
-                title="Integrations"
-                body="Supercharge your project with new frameworks and libraries."
-            />
-            <Card
-                href="https://astro.build/themes/"
-                title="Themes"
-                body="Explore a galaxy of community-built starter themes."
-            />
-            <Card
-                href="https://astro.build/chat/"
-                title="Community"
-                body="Come say hi to our amazing Discord community. ❤️"
-            /> -->
-            <Card
-                href="/article/"
-                title="Article"
-                body="Little test to article. 🦄"
-            />
-            <Card href="/test/" title="Test" body="Little test. 📫" />
-            <Card href="/test/" title="Test" body="Little test. 📫" />
-        </ul>
-    </main>
-</Layout>
+<EmptyLayout>
+    <div class="fixed top-4 right-4 z-10">
+        <ToggleTheme />
+        <ThemeChange />
+    </div>
 
-<style>
-    main {
-        margin: auto;
-        padding: 1.5rem;
-        max-width: 60ch;
-    }
-    h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin: 0;
-    }
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-    }
-    .instructions {
-        line-height: 1.6;
-        margin: 1rem 0;
-        border: 1px solid rgba(var(--accent), 25%);
-        padding: 1rem;
-        border-radius: 0.4rem;
-    }
-    .instructions code {
-        font-size: 0.875em;
-        font-weight: bold;
-        background: rgba(var(--accent), 12%);
-        color: rgb(var(--accent));
-        border-radius: 4px;
-        padding: 0.3em 0.45em;
-    }
-    .instructions strong {
-        color: rgb(var(--accent));
-    }
-    .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
+    <div class="landing gap-3">
+        <IconLink
+            to="/arquitectura"
+            text="Arquitectura"
+            title="Arquitectura de los servicios en línea"
+            icon="📐"
+        />
+
+        <IconLink
+            to="/javascript101"
+            title="Javascript 101"
+            icon="🦄"
+            text="Javascript"
+        />
+
+        <IconLink to="/test" title="Storyblok" icon="👆" text="Storyblock" />
+
+        <IconLink to="/node" title="Node 101">
+            <div class="icon">🐱‍👤</div>
+            <div class="text">Node</div>
+        </IconLink>
+
+        <IconLink to="/node/http" title="node.http">
+            <div class="icon">🤢</div>
+            <div class="text">node.http</div>
+        </IconLink>
+
+        <IconLink to="/calculadora" title="calculadora">
+            <div class="icon">📏</div>
+            <div class="text">calculadora</div>
+        </IconLink>
+
+        <IconLink to="/calculadora/refactor" title="calculadora refactor">
+            <div class="icon">🧠</div>
+            <div class="text">calculadora refactor</div>
+        </IconLink>
+
+        <IconLink to="/express/static" title="express static">
+            <div class="icon">🐶</div>
+            <div class="text">express.static</div>
+        </IconLink>
+
+        <IconLink to="/wordlesolver" title="wordle solver">
+            <div class="icon">😎</div>
+            <div class="text">wordle.solver</div>
+        </IconLink>
+
+        <IconLink to="/flagture" title="flagture">
+            <div class="icon">🏴‍☠️</div>
+            <div class="text">flagture</div>
+        </IconLink>
+
+        <IconLink to="/memegram" title="Memegram">
+            <div class="icon">📷</div>
+            <div class="text">memegram</div>
+        </IconLink>
+
+        <IconLink to="/rest" title="rest">
+            <div class="icon">👓</div>
+            <div class="text">rest</div>
+        </IconLink>
+
+        <IconLink to="/authentication" title="Autenticación">
+            <div class="icon">🔒</div>
+            <div class="text">auth*</div>
+        </IconLink>
+
+        <IconLink to="/memegram/graphql" title="Memegram + GraphQL">
+            <div class="icon">📸</div>
+            <div class="text">memegram<br />GraphQL</div>
+        </IconLink>
+
+        <IconLink to="/memegram/openapi" title="memegram-openapi">
+            <div class="icon">📸</div>
+            <div class="text">memegram<br />openapi</div>
+        </IconLink>
+
+        <IconLink to="/memegram/socketio" title="memegram-sockeio">
+            <div class="icon">📸</div>
+            <div class="text">memegram<br />socketio</div>
+        </IconLink>
+    </div>
+</EmptyLayout>
+
+<style is:global>
+    .landing {
+        position: relative;
+
+        width: 100%;
+        height: 100vh;
+        display: flex;
+
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        align-content: center;
+
+        font-size: 1em;
+
+        overflow: hidden;
     }
 </style>
