@@ -4,7 +4,7 @@ const { to, icon, title, text } = Astro.props;
 
 <a href={to} title={title}>
     <div class="icon">{icon}</div>
-    <div class="text">{text}</div>
+    <div class="text base-100">{text}</div>
 </a>
 
 <style>
@@ -19,7 +19,6 @@ const { to, icon, title, text } = Astro.props;
     .text {
         line-height: normal;
         font-size: 10px;
-        color: black;
         text-transform: uppercase;
         text-align: center;
     }
@@ -35,14 +34,5 @@ const { to, icon, title, text } = Astro.props;
         filter: drop-shadow(7px 7px 0px rgba(0, 0, 0, 0.2));
 
         font-family: "Segoe UI Emoji", sans-serif;
-    }
-</style>
-
-<style is:global>
-    .text {
-    }
-
-    .dark .text {
-        color: #999;
     }
 </style>

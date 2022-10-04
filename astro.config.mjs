@@ -19,7 +19,7 @@ export default defineConfig({
     vue(),
     tailwind({
       config: {
-        applyBaseStyles: false,
+        // applyBaseStyles: false,
       },
     }),
     storyblok({
