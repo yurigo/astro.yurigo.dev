@@ -4,7 +4,7 @@ const { to, icon, title, text } = Astro.props;
 
 <a href={to} title={title}>
     <div class="icon">{icon}</div>
-    <div class="text base-100">{text}</div>
+    <div class="text base-100" set:html={text}></div>
 </a>
 
 <style>
